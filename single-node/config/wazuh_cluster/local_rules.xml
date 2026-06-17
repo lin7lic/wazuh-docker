@@ -87,10 +87,11 @@
        高風險事件
   ========================================== -->
 
-  <!-- Rootkit 偵測 -->
+  <!-- Rootkit 偵測：只攔截官方 rootcheck 規則中真正告警等級的項目
+       （不用 if_group rootcheck，避免抓到掃描開始/結束等狀態訊息） -->
   <rule id="100030" level="15">
-    <if_group>rootcheck</if_group>
-    <description>【緊急】Rootkit 或惡意程式偵測</description>
+    <if_sid>510</if_sid>
+    <description>【緊急】Rootkit 或惡意程式偵測：$(title)</description>
     <group>login_notify</group>
   </rule>
 
