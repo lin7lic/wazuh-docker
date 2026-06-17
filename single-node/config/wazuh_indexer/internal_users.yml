@@ -12,7 +12,7 @@ _meta:
 
 admin:
   hash: "$2y$12$K/SpwjtB.wOHJ/Nc6GVRDuc1h0rM1DfvziFRNPtk27P.c4yDr9njO"
-  reserved: true
+  reserved: false
   backend_roles:
   - "admin"
   description: "Demo admin user"
