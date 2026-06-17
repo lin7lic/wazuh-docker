@@ -2,11 +2,22 @@
 
 ## 啟動前
 
-只需要改 `docker-compose.yml` 裡的一個地方：
+需要改三個地方，三個**密碼必須完全一致**（都是 `wazuh-wui` 這組帳號）：
 
 ```yaml
-API_PASSWORD=你自己的密碼    # 原本是 MyS3cr37P450r.*-，GitHub 公開必改
+# docker-compose.yml 第 36 行（wazuh.manager）
+API_PASSWORD=你自己的密碼
+
+# docker-compose.yml 第 106 行（wazuh.dashboard）
+API_PASSWORD=你自己的密碼
 ```
+
+```yaml
+# config/wazuh_dashboard/wazuh.yml 第 6 行
+password: "你自己的密碼"
+```
+
+原本三個都是 `MyS3cr37P450r.*-`，GitHub 公開必改。
 
 `SecretPassword` 和 `kibanaserver` 先不動，讓系統用預設值啟動。
 
